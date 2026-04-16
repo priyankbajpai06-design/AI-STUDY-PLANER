@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Study Planner PRO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <button onclick="showSection('todo')">📋</button>
+  <button onclick="showSection('graph')">📊</button>
+</div>
+
+<div class="container">
+
+<h1>AI Study Planner</h1>
+
+<h3>📚 Subjects</h3>
+<input id="subjectInput" placeholder="Enter Subject">
+<select id="priority">
+  <option value="1">Low</option>
+  <option value="2">Medium</option>
+  <option value="3">High</option>
+</select>
+<button id="addBtn">Add</button>
+<div id="subjects"></div>
+
+<h3>⏰ Timetable</h3>
+<input id="startTime" placeholder="Start (9am, 10:30)">
+<input id="endTime" placeholder="End (2pm, 15:00)">
+<button id="timeBtn">Generate</button>
+<div id="timetable"></div>
+
+<h3>🎯 Goal</h3>
+<input id="goalInput" placeholder="e.g. 4">
+<button id="goalBtn">Save</button>
+<p><span id="doneHours">0</span> / <span id="goalDisplay">0</span> hrs</p>
+
+<div class="progress-box">
+  <div id="progressBar"></div>
+</div>
+
+<h3>⏱ Timer</h3>
+<p id="timer">25:00</p>
+<button id="startBtn">Start</button>
+<button id="resetBtn">Reset</button>
+
+<h3>🔥 Streak: <span id="streak">0</span></h3>
+
+<h3>📅 Today</h3>
+<p id="summary"></p>
+
+<!-- TODO -->
+<div id="todoSection" class="panel">
+  <h3>📋 To-Do</h3>
+  <input id="taskInput" placeholder="Add Task">
+  <button onclick="addTask()">Add</button>
+  <div id="taskList"></div>
+</div>
+
+<!-- GRAPH -->
+<div id="graphSection" class="panel">
+  <h3>📊 Progress Trend</h3>
+  <canvas id="graphCanvas" width="400" height="200"></canvas>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
